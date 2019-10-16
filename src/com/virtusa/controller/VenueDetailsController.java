@@ -56,6 +56,7 @@ public class VenueDetailsController extends HttpServlet{
 
 			venueDetailList(request, response);
 			break;
+			
 		}
 	}
 
