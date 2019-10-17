@@ -70,8 +70,8 @@ public class VenueDetailsController extends HttpServlet{
 		batchdetailslist = venueservice.getBatchDetails();
 		
 
-		request.setAttribute("batchdetailsList", batchdetailslist);
-		request.setAttribute("venuedetailsList", venuedetailslist);
+		request.setAttribute("batchdetailsList",batchdetailslist);
+		request.setAttribute("venuedetailsList",venuedetailslist);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("venueindex.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -97,8 +97,8 @@ public class VenueDetailsController extends HttpServlet{
 			String venueId = request.getParameter("venueId");
 			String batchId = request.getParameter("batchId");
 			
-System.out.println(venueId);
-			rowsupdated = venueservice.updatedVenuedetails(venueId, batchId);
+System.out.println(venueId+"  "+batchId);
+			rowsupdated = venueservice.updatedVenuedetails(venueId,batchId);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -110,7 +110,7 @@ System.out.println(venueId);
 
  
 
-        request.setAttribute("SuccessMessage", SuccessMessage);
+        request.setAttribute("SuccessMessage",SuccessMessage);
         response.sendRedirect("/Venue/venuelist");
 
 	}

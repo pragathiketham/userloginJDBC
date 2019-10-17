@@ -6,6 +6,9 @@ public class VenueDetailsModel {
 	private String venueName;
 	private String venueCapacity;
 	private String venueLocation;
+	private String batchName;
+	
+	
 	
 	public VenueDetailsModel() {}
 

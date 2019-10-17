@@ -27,20 +27,21 @@
 				<td><c:out value="${venueDetails.venueLocation}"/></td>
 				<td><c:if test="${empty venueDetails.batchName}">
 				<a class="anchor" id="assignlink${venueDetails.venueId}"
-				         href="${pageContext.request.contextPath}/venuebatchlist">Assign</a>
+				         href="${pageContext.request.contextPath}/venuebatchlist"
+				         >Assign</a>
 				
-				<form class="formtag" id="${venueDetails.venueid}" name="${venueDetails.venueid}" action="${pageContext.request.contextPath}/updatebatch">
-				<select id="batchid" name="batchId">
+				<form class="formtag" id="${venueDetails.venueId}" name="${venueDetails.venueId}" action="${pageContext.request.contextPath}/updatebatch">
+				<select id="batchId" name="batchId">
 								<c:forEach items="${batchdetailsList}" var="batchdetails">
 									<option   value="${batchdetails.batchId}">${batchdetails.batchName}</option>
 								</c:forEach>
-							</select> <input type="hidden" id="venueId" name="venueId" value="${venueDetails.venueid}"> 
+							</select> <input type="hidden" id="venueId" name="venueId" value="${venueDetails.venueId}"/> 
 								<input type="submit" value="Update" id="button${venueDetails.venueId}" />
 				
 				
 				</form>
 				
-				</c:if> ${venueDetails.batchname}</td>
+				</c:if> ${venueDetails.batchName}</td>
 				</tr>
 	</c:forEach>
 
